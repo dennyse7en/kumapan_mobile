@@ -2,9 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:kumapan_mobile/screens/login_screen.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  // runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(); // Inisialisasi Firebase
+
   initializeDateFormatting('id_ID', null).then((_) {
     runApp(const MyApp());
   });
@@ -20,7 +23,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: LoginScreen(), // Halaman pertama yang dibuka adalah Login
+      // Selalu mulai dari LoginScreen
+      home: LoginScreen(),
     );
   }
 }

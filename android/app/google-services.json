@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "435388970422",
+    "project_id": "kumapan-c0803",
+    "storage_bucket": "kumapan-c0803.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435388970422:android:c6a1030255cd3d705d7d17",
+        "android_client_info": {
+          "package_name": "com.example.kumapan_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAODTngbowVj1_NmYog9V1oj6xj4ec2Kzs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435388970422:android:3b0d806ff6b9b4aa5d7d17",
+        "android_client_info": {
+          "package_name": "com.kumapan.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAODTngbowVj1_NmYog9V1oj6xj4ec2Kzs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

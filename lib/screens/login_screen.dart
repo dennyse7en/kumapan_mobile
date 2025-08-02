@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:kumapan_mobile/api/api_service.dart';
 import 'package:kumapan_mobile/screens/dashboard_screen.dart';
+import 'package:kumapan_mobile/api/notification_service.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -25,6 +26,14 @@ class _LoginScreenState extends State<LoginScreen> {
       _emailController.text,
       _passwordController.text,
     );
+
+    if (result['success']) {
+      // Inisialisasi notifikasi setelah login berhasil
+      await NotificationService().initNotifications();
+
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => DashboardScreen()));
+    }
 
     setState(() {
       _isLoading = false;

@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:kumapan_mobile/models/credit_application.dart';
 import 'package:kumapan_mobile/models/credit_application_detail.dart';
 import 'dart:io';
+import 'dart:async';
 
 class ApiService {
   // Ganti dengan IP address lokal Anda jika menguji di perangkat fisik,
@@ -22,7 +23,7 @@ class ApiService {
           'email': email,
           'password': password,
         },
-      );
+      ).timeout(const Duration(seconds: 10));
 
       final responseData = json.decode(response.body);
 
@@ -44,8 +45,8 @@ class ApiService {
           'message': responseData['message'] ?? 'Kredensial tidak cocok.',
         };
       }
-    } catch (e) {
-      // Jika terjadi error koneksi
+    } on TimeoutException {
+      // Tangani error timeout secara spesifik
       return {
         'success': false,
         'message': 'Gagal terhubung ke server. Periksa koneksi internet Anda.',
