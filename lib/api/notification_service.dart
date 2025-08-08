@@ -11,9 +11,5 @@ class NotificationService {
     // Mengambil token FCM unik untuk perangkat ini
     final fcmToken = await _fcm.getToken();
     print('FCM Token: $fcmToken');
-
-    // TODO: Kirim token ini ke server Laravel Anda untuk disimpan
-    // di kolom 'fcm_token' pada tabel 'users'.
-    // Buat endpoint API baru di Laravel untuk ini.
   }
 }
